@@ -17,9 +17,9 @@ function draw() {
   // top right
   drawLines(w,   0,   90,  180, 12);
   // center left
-  drawLines(w,   h/2, -90, 90, 12);
+  drawLines(0,   h/2, -90, 90, 12);
   // center right
-  drawLines(0,   h/2, 90,  270, 12);
+  drawLines(w,   h/2, 90,  270, 12);
   // bottom left
   drawLines(0,   h,   270, 360, 12);
   // bottom mid
@@ -36,11 +36,15 @@ function drawLines(originX, originY, minAngle, maxAngle, numLines)
   let w = windowWidth;
   let h = windowHeight;
   let maxL = sqrt(pow(w, 2) + pow(h, 2));
-  for (let i = 0; i < 12; i++)
+  for (let i = 0; i < numLines; i++)
   {
     let d = random(minAngle, maxAngle);
-    let v = p5.Vector.fromAngle(radians(d), maxL);
-    stroke(255);
+    let rl = random(windowWidth/2, maxL);
+    let v = p5.Vector.fromAngle(radians(d), rl);
+    let rc = random(50, 255);
+    stroke(rc);
+    let rw = random(.25, .5);
+    strokeWeight(.5);
     line(originX, originY, v.x, v.y);
   }
 }
