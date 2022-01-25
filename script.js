@@ -17,7 +17,7 @@ function draw() {
   // top right
   drawLines(w,   0,   90,  180, 12);
   // center left
-  drawLines(w,   h/2, 270, 450, 12);
+  drawLines(w,   h/2, -90, 90, 12);
   // center right
   drawLines(0,   h/2, 90,  270, 12);
   // bottom left
