@@ -44,7 +44,7 @@ function drawLines(originX, originY, minAngle, maxAngle, numLines)
     let rc = random(50, 255);
     stroke(rc);
     let rw = random(.25, .5);
-    strokeWeight(.5);
+    strokeWeight(rw);
     line(originX, originY, v.x, v.y);
   }
 }
